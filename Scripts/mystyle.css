@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+body {
+    font-family: 'Raleway', sans-serif;
+    
+}
+
+
+#container-login {
+   background-color: rgb(0, 0, 0, 0.85);
+    position: relative;
+    top: 20%;
+    margin: auto;
+    width: 640px;
+    height: 560px;  
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    
+}
+
+
+
+#title {
+    position: relative;
+    
+    width: 100%;
+    padding: 20px 0px;
+    color: #ffffff;
+    font-size: 72px;
+    
+}
+
+
+
+.input {
+    margin: auto;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    background-color: #ffffff;
+    padding: 8px 0px;
+    margin-top: 15px;
+    width: 560px;
+    height: 85px;
+    font-size: 64px;
+}
+
+.input-addon {
+    float: left;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 4px 8px;
+    font-size: 64px;
+    color: rgb(0, 0, 0);
+    
+}
+
+
+
+input[type=text] {
+    color: rgb(0, 0, 0);
+    margin: 0;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 6px 0px;
+    font-size: 64px;
+    width: 560px;
+    height: 85px;
+    
+}
+
+input[type=text]:focus {
+    border: 1px solid #ffffff;
+    font-size: 64px;
+    width: 560px;
+    height: 85px;
+    color: #000000;
+}
+
+input[type=password] {
+    color: #000000;
+    margin: 0;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 6px 0px;
+    font-size: 64px;
+    width: 560px;
+    height: 85px;
+    
+}
+
+input[type=password]:focus {
+    border: 1px solid #000000;
+    font-size: 64px;
+}
+
+.validate{
+   color: rgb(0, 0, 0);
+}
+
+
+
+
+.forgot-password {
+   /* padding: 0px 100px; */
+   background: rgb(255, 255, 255);
+   color: rgb(255, 255, 255);
+   font-weight: bold;
+   border: 0 none;
+   cursor: pointer;
+   font-size: 64px;
+   
+}
+
+.forgot-password a:link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.forgot-password a:visited {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    color: rgb(207, 207, 207);
+    transition: color 1s;
+}
+
+.privacy {
+    margin-top: 5px;
+    position: relative;
+    font-size: 12px;
+    bottom: 0%;
+}
+
+.privacy a:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.privacy a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.privacy a:hover {
+    color: rgb(255, 255, 255);
+    transition: color 1s;
+}
+
+*:focus {
+    outline: none;
+}
+
+.remember-me {
+    margin: 10px 0;
+    
+}
+
+input[type=submit] {
+   margin-top: 5%;
+    padding: 12px 100px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    border: 0 none;
+    cursor: pointer;
+    width: 560;
+    height: 85px;
+    font-size: 64px;
+
+}
+
+
+
+.clearfix {
+    clear: both;
+}
+
+.schedulebox{
+    background: rgba(0, 0, 0, 0.85);
+    width: 840px;
+    height: 700px;
+    color: white;
+    left: 47px;
+    top: 50px;
+    position: relative;
+
+  }
+
+  .scheduletitle{
+    background: rgba(0, 0, 0, 0.85);
+    width: 543px;
+    height: 85px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 96px;
+    text-align:center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .timecolumn{
+    width: 100px;
+    height: 700px;
+    margin-right: auto;
+    background: rgb(255, 0, 0);
+    position: absolute;
+  }
+  .grid-container {
+    display: grid;
+    grid-column: 1;
+    grid-auto-rows: 94px;
+    position: relative;
+    height: 846px;
+  }
+  
+  .grid-item {
+
+    font-size: 30px;
+    text-align: center;
+  }
+
