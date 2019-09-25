@@ -100,7 +100,7 @@ input[type=password]:focus {
 
 
 .forgot-password {
-   /* padding: 0px 100px; */
+    padding: 0px 100px; 
    background: rgb(255, 255, 255);
    color: rgb(255, 255, 255);
    font-weight: bold;
@@ -177,15 +177,47 @@ input[type=submit] {
 }
 
 .schedulebox{
+    display: grid;
     background: rgba(0, 0, 0, 0.85);
-    width: 840px;
-    height: 700px;
+    width: 837px;
+    height: auto;
+    text-align: center;
+    
+    font-family: 'Lato';
+    text-align: center;
+    column-count: 4;
+    justify-content: space-around;
+    align-content: space-evenly;
     color: white;
     left: 47px;
-    top: 50px;
+    top: 10%;
     position: relative;
-
+    
   }
+  .grid-container{
+    grid-template-columns: 122px 151px 398px 166px;
+  }
+  .item{
+      padding-top: 3px;
+      border: solid 0.1px white;
+  }
+  .a{
+    font-size: 48px;
+  }
+  .b{
+    font-size: 18px;
+  }
+
+  .c{
+    font-size: 18px;
+  }
+  .d{
+    font-size: 18px;
+  }
+  /* .i{
+    grid-column-start: 1;
+    grid-c
+  } */
 
   .scheduletitle{
     background: rgba(0, 0, 0, 0.85);
@@ -202,19 +234,11 @@ input[type=submit] {
     margin-top: 30px;
   }
 
-  .timecolumn{
-    width: 100px;
-    height: 700px;
-    margin-right: auto;
-    background: rgb(255, 0, 0);
-    position: absolute;
-  }
   .grid-container {
     display: grid;
     grid-column: 1;
     grid-auto-rows: 94px;
     position: relative;
-    height: 846px;
   }
   
   .grid-item {
@@ -223,3 +247,83 @@ input[type=submit] {
     text-align: center;
   }
 
+  .button {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 48px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .button1 {
+    
+    background-color: #000000;
+    color: white;
+    position: absolute;
+  width: 384px;
+  height: 183px;
+  left: 65%;
+  top: 210px;
+  }
+  
+  .button1:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .button2 {
+    
+    background-color: #000000;
+    color: white;
+    position: absolute;
+    width: 384px;
+    height: 183px;
+    left: 65%;
+    top: 460px;
+  
+  }
+  
+  .button2:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .button3 {
+    
+    background-color: #000000;
+    color: white;
+    position: absolute;
+    width: 384px;
+    height: 183px;
+    left: 65%;
+    top: 710px;
+  
+  }
+  
+  .button3:hover {
+    background-color: white;
+    color: black;
+  }
+  .buttonlogout {
+    
+    background-color: #000000;
+    color: white;
+    position: absolute;
+    width: 140px;
+    height: 68px;
+    left: 73%;
+    top: 960px;
+    font-size: 36;
+    margin-bottom: 5%;
+  }
+  
+  .buttonlogout:hover {
+    background-color: white;
+    color: black;
+  }
+  
