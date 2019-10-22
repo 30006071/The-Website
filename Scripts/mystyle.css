@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 body {
-    font-family: 'Raleway', sans-serif;
-    
+              font-family: 'Raleway', sans-serif;
+              text-align: center;
 }
 
 
@@ -21,7 +21,6 @@ body {
 
 #title {
     position: relative;
-    
     width: 100%;
     padding: 20px 0px;
     color: #ffffff;
@@ -60,9 +59,9 @@ input[type=text] {
     margin: 0;
     background-color: #ffffff;
     border: 1px solid #ffffff;
-    padding: 6px 0px;
+    
     font-size: 64px;
-    width: 560px;
+    
     height: 85px;
     
 }
@@ -70,7 +69,7 @@ input[type=text] {
 input[type=text]:focus {
     border: 1px solid #ffffff;
     font-size: 64px;
-    width: 560px;
+    width: auto;
     height: 85px;
     color: #000000;
 }
@@ -164,10 +163,13 @@ input[type=submit] {
     font-weight: bold;
     border: 0 none;
     cursor: pointer;
-    width: 560;
-    height: 85px;
+    width: auto;
     font-size: 64px;
-
+    text-align: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  
 }
 
 
@@ -182,7 +184,6 @@ input[type=submit] {
     width: 837px;
     height: auto;
     text-align: center;
-    
     font-family: 'Lato';
     text-align: center;
     column-count: 4;
@@ -198,7 +199,6 @@ input[type=submit] {
     grid-template-columns: 122px 151px 398px 166px;
   }
   .item{
-      padding-top: 3px;
       border: solid 0.1px white;
   }
   .a{
@@ -226,7 +226,7 @@ input[type=submit] {
     color: white;
     margin-left: auto;
     margin-right: auto;
-    font-size: 96px;
+    font-size: 80px;
     text-align:center;
     display:flex;
     align-items: center;
@@ -327,3 +327,46 @@ input[type=submit] {
     color: black;
   }
   
+  .formscentre{
+    
+    
+    width: 938px;
+    height: auto;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 2%;
+  } 
+
+  @media only screen and (max-width: 840px) {
+    .button1 {
+      top:0;
+      position: relative;
+      left:auto;
+      width: auto;
+      height: auto;
+      font-size: 30px;
+      margin-left: 3%;
+    }
+    .button2 {
+      top:0;
+      position: relative;
+      left:auto;
+      width: auto;
+      height: auto;
+      font-size: 30px;
+      margin-left: 3%;
+    }
+    .button3 {
+      top:0;
+      position: relative;
+      left:auto;
+      width: auto;
+      height: auto;
+      font-size: 30px;
+      margin-left: 3%;
+    }
+  }
