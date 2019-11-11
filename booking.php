@@ -54,8 +54,10 @@ include("customerlist.php");
                     }
                     ?>
                 </select>
-                <label for="Date/Time">Date/Time:</label>
-                <input type="text" class="form-control" id="Date/Time" name="DateTime" placeholder="13:25 09/08/2019">
+                <label for="Time">Time:</label>
+                <input type="text" class="form-control" id="Time" name="TheTime" placeholder="13:25:00">
+                <label for="Date">Date:</label>
+                <input type="text" class="form-control" id="Date" name="TheDate" placeholder="2019/11/11">
                 <label for="TheDescription">Description</label>
                 <input type="text" class="form-control" id="TheDescription" name="Description" placeholder="Description of booking">
                 <input type="submit" class="form-control" value="Submit">

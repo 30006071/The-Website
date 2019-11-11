@@ -13,17 +13,19 @@ server with default setting (user 'root' with no password) */
 $CustomerID = $_REQUEST['CustomerID'];
 $Rego = mysqli_real_escape_string($conn, $_REQUEST['Rego']);
 $Mechanic = $_REQUEST['MechanicID'];
-$DateTime = mysqli_real_escape_string($conn, $_REQUEST['DateTime']);
 $Description = mysqli_real_escape_string($conn, $_REQUEST['Description']);
+$TheTime = mysqli_real_escape_string($conn, $_REQUEST['TheTime']);
+$TheDate = mysqli_real_escape_string($conn, $_REQUEST['TheDate']);
  
 // Attempt insert query execution
-$sql = "INSERT INTO Booking (CustomerID, Rego, Mechanic, DateTime, Description) VALUES ( '$CustomerID', '$Rego', '$Mechanic', '$DateTime', '$Description')";
+$sql = "INSERT INTO Booking (CustomerID, Rego, Mechanic, TheTime, TheDate, Description) VALUES ( '$CustomerID', '$Rego', '$Mechanic', '$TheTime', '$TheDate', '$Description')";
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";
     header("Location:schedule.php");
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
 }
+
 // Close connection
 mysqli_close($conn);
 ?>

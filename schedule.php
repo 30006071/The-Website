@@ -1,5 +1,7 @@
+<?php
+include("inserttoschedule.php");
+?>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Schedule</title>
@@ -23,48 +25,26 @@
     <div class = "scheduletitle">
     Schedule
     </div>
-    <form action="FinaliseBooking.php" method="POST">
         <div class = "schedulebox">
-            <div class="grid-container">
-                <div class="item a" >9:00</div>
-                <div class="item b">Rego:<br>GET<br>Customer:<br>GET</div>
-                <div class="item c">Job description: Fit and Balance 4 new tyres and check over vehcile oil leak</div>
-                <div class="item d">Mechanic: James A, Andy E</div>
-                <div class="item e"></div>
-                <div class="item f"></div>
-                <div class="item g"></div>
-                <div class="item h"></div>
-                <div class="item i"></div>
-                <div class="item g"></div>
-                <div class="item h"></div>
-                <div class="item i"></div>
-                <div class="item a">9:00</div>
-                <div class="item b">Rego:<br>GET<br>Customer:<br>GET</div>
-                <div class="item c">Job description: Fit and Balance 4 new tyres and check over vehcile oil leak</div>
-                <div class="item d">Mechanic: James A, Andy E</div>
-                <div class="item e"></div>
-                <div class="item f"></div>
-                <div class="item g"></div>
-                <div class="item h"></div>
-                <div class="item i"></div>
-                <div class="item g"></div>
-                <div class="item h"></div>
-                <div class="item i"></div>
-                <div class="item a">9:00</div>
-                <div class="item b">Rego:<br>GET<br>Customer:<br>GET</div>
-                <div class="item c">Job description: Fit and Balance 4 new tyres and check over vehcile oil leak</div>
-                <div class="item d">Mechanic: James A, Andy E</div>
-                <div class="item e"></div>
-                <div class="item f"></div>
-                <div class="item g"></div>
-                <div class="item h"></div>
-                <div class="item i"></div>
-                <div class="item g"></div>
-                <div class="item h"></div>
-                <div class="item i"></div>
-            </div>
+            <table class="mystable" onClick="parent.location='thejob.php'" value="Job" >
+                    <th>ID</th>
+                    <th>Time</th>
+                    <th>CustomerID</th>
+                    <th>Rego</th>
+                    <th>Description</th>
+                    <th>Mechanic</th>
+                    <?php while($row = mysqli_fetch_array($query)):?> 
+                <tr>
+                    <td><?php echo $row['BookingID'];?></td>
+                    <td><?php echo $row['TheTime'];?></td>
+                    <td><?php echo $row['CustomerID'];?></td>
+                    <td><?php echo $row['Rego'];?></td>
+                    <td><?php echo $row['Description'];?></td>
+                    <td><?php echo $row['Mechanic'];?></td>
+                </tr>
+                <?php endwhile;?>
+            </table>
         </div>
-    </form>
             <input type=button class="button button1" onClick="parent.location='customer.php'" value="New Customer">
             <input type=button class="button button2" onClick="parent.location='booking.php'" value="New Booking">
             <input type=button class="button button3" onClick="parent.location='prevwork.php'" value="Previous Work">

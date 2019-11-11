@@ -1,0 +1,20 @@
+<?php
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+    $user = 'root';
+    $password = 'root';
+    $db = 'W-Schedule';
+    $host = 'localhost';
+    $port = 8889;
+
+
+$conn = new mysqli($host, $user, $password,$db,$port) or die("Connect failed: %s\n". $conn -> error);
+$query = $conn->query("SELECT BookingID FROM Booking");
+$BookingID = $_REQUEST['BookingID'];
+$query2 = $conn->query("SELECT * FROM Booking" );
+ 
+//  $query = $conn->query("SELECT BookingID FROM Booking");
+//  $BookingID = $_REQUEST['BookingID'];    
+
+
+?>
