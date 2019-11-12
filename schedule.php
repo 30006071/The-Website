@@ -25,6 +25,10 @@ include("inserttoschedule.php");
     <div class = "scheduletitle">
     Schedule
     </div>
+        <!-- <form class="schedulesearch" action="searchscedule.php" method="post">  
+            <input type="text" name="valueToSearch" placeholder=""><br><br>
+            <input type="submit" name="search" value="Search" class="Centrestuff"><br><br>
+        </form> -->
         <div class = "schedulebox">
             <table class="mystable" onClick="parent.location='thejob.php'" value="Job" >
                     <th>ID</th>

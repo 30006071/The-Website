@@ -10,7 +10,7 @@ server with default setting (user 'root' with no password) */
  $conn = new mysqli($host, $user, $password,$db,$port) or die("Connect failed: %s\n". $conn -> error);
  
  
- $query = $conn->query("SELECT * FROM Booking WHERE DATE(TheDate) = DATE(NOW())" );
+ $query = $conn->query("SELECT * FROM Booking WHERE DATE(TheDate) = DATE(NOW()) ORDER BY `Booking`.`TheTime` ASC" );
 // Close connection
 mysqli_close($conn);
 ?>

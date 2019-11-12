@@ -1,5 +1,5 @@
 <?php
-include("searchdb.php");
+    include("searchdb.php");
 ?>
 <html>
 
@@ -43,9 +43,7 @@ include("searchdb.php");
                 <?php while($row = mysqli_fetch_array($search_result)):?>
                 
                 <tr>
-                <td><?php $dt = new Date($row['TheDate']);
-                $date = $dt->format('d/m/Y');
-                echo $date; ?></td>
+                <td><?php echo $row['TheDate'];?></td>
                 <td><?php echo $row['CustomerID'];?></td>
                     <td><?php echo $row['Rego'];?></td>
                     <td><?php echo $row['Description'];?></td>
@@ -60,3 +58,4 @@ include("searchdb.php");
 </body>
 
 </html>
+

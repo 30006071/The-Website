@@ -2,6 +2,9 @@
 
 include("editjob.php");
 //Adding the php to the top.
+
+$bookid = $_GET['BookingID'];
+
 ?>
 
 <html>
@@ -38,30 +41,71 @@ include("editjob.php");
 
                 <label for="selectBookingID">BookingID:</label>
 
-                <select class="form-control" onChange()="<?php $_POST['BookingID'] ?>" name="BookingID" id="BookingSelect">
-                    <?php
+                <!-- onchange="window.location='thejob.php?BookingID='+this.value;" -->
+
+                <select class="form-control" onChange="testing(event)"  name="BookingID" id="BookingSelect">
+                <option value=''  >Select BookingID</option>
+                 <?php
                     while($rows = $query->fetch_assoc())
                     {
                         $BookingID = $rows['BookingID'];
-                        echo"<option value='$BookingID'>$BookingID</option>";
+
+                        echo ($bookid == $BookingID) ? "<option value='$BookingID' selected >$BookingID</option>" : "<option value='$BookingID' >$BookingID</option>";
+         
+                        //echo"<option id='BookingSelect' value='$BookingID' >$BookingID</option>";
                     } 
-                    ?> 
+                    ?>  
+
+                    
                 </select>
-                <?php while($row = mysqli_fetch_array($query2));?> 
+
+                    
+
+                            <script>
+                                var myselect = document.getElementById("myselect");
+                                myselect.options.selectedIndex = <?php echo $_GET["pos"]; ?>
+                            </script>
+
+                <?php 
+                foreach($query2 as $value)
+                 {
+                     $customer= $value['CustomerID'];
+                    $id= $value['BookingID'];
+                    $rego= $value['Rego'];
+                    $mechanic= $value['Mechanic'];
+                    $time = $value['TheTime'];
+                    $date = $value['TheDate'];
+                    $desc = $value['Description'];
+
+                 }
+                ?> 
+                <label for="CustomerID">CustomerID:</label>
+                <input type="text" class="form-control" id="Customer" name="CustomerID" placeholder="John Doe" value="<?php echo $customer?>">
                 <label for="CarRego">Rego:</label>
-                <input type="text" class="form-control" id="CarRego" name="Rego" placeholder="ABC123" value="<?php echo $row['Rego']?>">
+                <input type="text" class="form-control" id="CarRego" name="Rego" placeholder="ABC123" value="<?php echo $rego?>">
                 <label for="TheMechanics">Mechanics:</label>
-                <input type="text" class="form-control" name = "MechanicID" id="MechanicSelect" value="mechanicvalue">
+                <input type="text" class="form-control" name = "MechanicID" id="MechanicSelect" value="<?php echo $mechanic?>">
                 <label for="Time">Time:</label>
-                <input type="text" class="form-control" id="Time" name="TheTime" value="timevalue">
+                <input type="text" class="form-control" id="Time" name="TheTime" value="<?php echo $time?>">
                 <label for="Date">Date:</label>
-                <input type="text" class="form-control" id="Date" name="TheDate" value="datevalue">
+                <input type="text" class="form-control" id="Date" name="TheDate" value="<?php echo $date?>">
                 <label for="TheDescription">Description</label>
-                <input type="text" class="form-control" id="TheDescription" name="Description" value="descriptionvalue">
-                <input type="submit" class="form-control" value="Submit">
+                <input type="text" class="form-control" id="TheDescription" name="Description" value="<?php echo $desc?>">
+                <input type="submit" name="submit" class="form-control" value="Submit Job"> 
+                <input type="submit" name="delete" class="form-control" value="Cancel Booking">
+                <input type="submit" name="update" class="form-control" value="Update Job">
             
             </form>
     </div>
+
+    <script>
+
+        function testing(event) {
+            event.preventDefault()
+            window.location.href = '/thejob.php?BookingID='+event.target.value;
+        }
+
+        </script>
 </body>
 
 </html>
