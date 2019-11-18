@@ -1,5 +1,28 @@
 <?php
 include("inserttoschedule.php");
+
+    // Initialize the session
+
+    session_start();
+
+     
+
+    // If session variable is not set it will redirect to login page
+
+    if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+
+      header("location: login.php");
+
+      exit;
+
+    }
+    $showbuttons= false;
+    if($_SESSION['username']=='theadmin')
+    {
+        $showbuttons = true;
+    }
+
+    $currentDate = date('d-m-Y');
 ?>
 <html>
 <head>
@@ -25,10 +48,13 @@ include("inserttoschedule.php");
     <div class = "scheduletitle">
     Schedule
     </div>
+    <input class = "datebutton buttondate" type=button onClick="parent.location='prevwork.php'" value="<?php echo $currentDate; ?>">
+    
         <!-- <form class="schedulesearch" action="searchscedule.php" method="post">  
             <input type="text" name="valueToSearch" placeholder=""><br><br>
             <input type="submit" name="search" value="Search" class="Centrestuff"><br><br>
         </form> -->
+        <div <?php if ($showbuttons===false){?>style="margin-left: 20%;"<?php } ?>>
         <div class = "schedulebox">
             <table class="mystable" onClick="parent.location='thejob.php'" value="Job" >
                     <th>ID</th>
@@ -49,10 +75,15 @@ include("inserttoschedule.php");
                 <?php endwhile;?>
             </table>
         </div>
+        </div>
+        <div <?php if ($showbuttons===false){?>style="display:none"<?php } ?>>
             <input type=button class="button button1" onClick="parent.location='customer.php'" value="New Customer">
             <input type=button class="button button2" onClick="parent.location='booking.php'" value="New Booking">
             <input type=button class="button button3" onClick="parent.location='prevwork.php'" value="Previous Work">
-            <input type=button class="button buttonlogout" onClick="parent.location='logout.php'" value="Logout">
+            
+        </div>
+                <input type=button class="button buttonlogout" onClick="parent.location='logout.php'" value="Logout">
+        
 </body>
 
 </html>

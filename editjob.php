@@ -46,7 +46,7 @@ if(isset($_POST['delete']))
 if(isset($_POST['update']))
 {
             $sql = "UPDATE Booking
-            SET Description='$Description', TheTime='$TheTime', TheDate='$TheDate'
+            SET Description='$Description', Rego='$Rego',TheTime='$TheTime', TheDate='$TheDate'
             WHERE BookingID='$BookingID'";
         if(mysqli_query($conn, $sql)){
             header("Location:schedule.php");
