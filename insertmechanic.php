@@ -1,3 +1,4 @@
+
 <?php
 // connect to db 
 
@@ -9,12 +10,12 @@
  $conn = new mysqli($host, $user, $password,$db) or die("Connect failed: %s\n". $conn -> error);
  
 // Escape user inputs for security
-$CustomerID = mysqli_real_escape_string($conn, $_REQUEST['CustomerID']);
-$Phnum = mysqli_real_escape_string($conn, $_REQUEST['Phnum']);
+$MechanicID = mysqli_real_escape_string($conn, $_REQUEST['MechanicID']);
+$IRD = mysqli_real_escape_string($conn, $_REQUEST['IRD']);
 $Email = mysqli_real_escape_string($conn, $_REQUEST['Email']);
  
 // Attempt insert query execution
-$sql = "INSERT INTO Customer (CustomerID, Phnum, Email) VALUES ('$CustomerID', '$Phnum', '$Email')";
+$sql = "INSERT INTO Mechanic (MechanicID, IRD, Email) VALUES ('$MechanicID', '$IRD', '$Email')";
 if(mysqli_query($conn, $sql)){
     header("Location:schedule.php?DateID=2019-11-20");
 } else{

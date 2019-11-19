@@ -1,6 +1,6 @@
 <?php
-/* Attempt MySQL server connection. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
+// connect to db 
+
 
     $user = 'root';
     $password = 'root';
@@ -25,7 +25,7 @@ $TheDate = date("Y-m-d", strtotime($Date));
 $sql = "INSERT INTO Booking (CustomerID, Rego, Mechanic, TheTime, TheDate, Description) VALUES ( '$CustomerID', '$Rego', '$Mechanic', '$TheTime', '$TheDate', '$Description')";
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";
-    header("Location:schedule.php");
+    header("Location:schedule.php?DateID=2019-11-20");
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
 }

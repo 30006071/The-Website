@@ -9,7 +9,8 @@ include("customerlist.php");
     <link rel="stylesheet" href="/Scripts/mystyle.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        body{
+        /* background photo */
+        body{ 
               background: url(Images/BackG.jpg);
               background-repeat: no-repeat;
               background-size: 100%;
@@ -24,6 +25,8 @@ include("customerlist.php");
 </head>
 
 <body>
+
+
 <div class = "scheduletitle">
     New Booking
 </div>
@@ -46,6 +49,7 @@ include("customerlist.php");
                 <label for="TheMechanics">Mechanics:</label>
                 <select class="form-control" name = "MechanicID" id="MechanicSelect">
                 <option value=''  >Select Mechanic</option>
+                    <!-- Select mechanic sql query shows all listed mechanics -->
                     <?php
                     while($rows = $querytwo->fetch_assoc())
                     {
@@ -58,6 +62,7 @@ include("customerlist.php");
                 <label for="Time">Time:</label>
                 <select class="form-control" name = "TheTimeSlot" id="TimeSelect">
                 <option value=''  >Select Time</option>
+                <!-- Select time sql query shows all listed timeslots -->
                     <?php
                     while($rows = $querythree->fetch_assoc())
                     {
@@ -68,6 +73,7 @@ include("customerlist.php");
                     ?>
                 </select>
                 <label for="Date">Date:</label>
+                <!-- Date picker -->
                 <input type="date" id="Date" placeholder="select date" class="form-control" name="Date">
                 <label for="TheDescription">Description</label>
                 <input type="text" class="form-control" id="TheDescription" name="Description" placeholder="Description of booking">

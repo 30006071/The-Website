@@ -66,20 +66,12 @@ $bookid = $_GET['BookingID'];
 
                         echo ($bookid == $BookingID) ? "<option value='$BookingID' selected >$BookingID</option>" : "<option value='$BookingID' >$BookingID</option>";
          
-                        //echo"<option id='BookingSelect' value='$BookingID' >$BookingID</option>";
                     } 
                     ?>  
 
                     
                 </select>
-
-                    
-
-                            <!-- <script>
-                                var myselect = document.getElementById("myselect");
-                                myselect.options.selectedIndex = <?php echo $_GET["pos"]; ?>
-                            </script> -->
-
+                         <?php echo $_GET["pos"]; ?>
                 <?php 
                 foreach($query2 as $value)
                  {

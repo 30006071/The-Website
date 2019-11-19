@@ -13,15 +13,16 @@ if(isset($_POST['search']))
     $search_result = filterTable($query);
 }
 // function to connect and execute the query
+// connect to db 
+
 function filterTable($query)
 {
    $user = 'root';
    $password = 'root';
    $db = 'W-Schedule';
    $host = 'localhost';
-   $port = 8889;
    
-$conn = new mysqli($host, $user, $password,$db,$port) or die("Connect failed: %s\n". $conn -> error);
+$conn = new mysqli($host, $user, $password,$db) or die("Connect failed: %s\n". $conn -> error);
     $filter_Result = mysqli_query($conn, $query);
     return $filter_Result;
 }

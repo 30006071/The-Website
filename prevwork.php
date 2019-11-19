@@ -53,7 +53,7 @@
             </table>
             </div>
         </form>
-        <input type=button class ="returnbutton" onClick="parent.location='schedule.php'" value="Return To Schedule">
+        <input type=button class ="returnbutton" onClick="parent.location='schedule.php?DateID=2019-11-20'" value="Return To Schedule">
 </div>
 </body>
 

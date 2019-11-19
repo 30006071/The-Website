@@ -83,7 +83,7 @@
 
                                 $_SESSION['username'] = $username;      
 
-                                header("location: schedule.php");
+                                header("location: schedule.php?DateID=2019-11-20");
 
                             } else{
 

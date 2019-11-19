@@ -1,6 +1,6 @@
 <?php
-/* Attempt MySQL server connection. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
+// connect to db 
+
     $user = 'root';
     $password = 'root';
     $db = 'W-Schedule';
@@ -28,7 +28,7 @@ if(isset($_POST['submit']))
         if(mysqli_query($conn, $sql)){
             $sql2 = "DELETE FROM Booking WHERE CustomerID = '$CustomerID'";
             mysqli_query($conn, $sql2);
-            header("Location:schedule.php");
+            header("Location:schedule.php?DateID=2019-11-20");
         } else{
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
         }
@@ -37,7 +37,7 @@ if(isset($_POST['delete']))
 {
             $sql = "DELETE FROM Booking WHERE CustomerID = '$CustomerID'";
         if(mysqli_query($conn, $sql)){
-            header("Location:schedule.php");
+            header("Location:schedule.php?DateID=2019-11-20");
         } else{
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
         }
@@ -49,20 +49,10 @@ if(isset($_POST['update']))
             SET Description='$Description', Rego='$Rego',TheTime='$TheTime', TheDate='$TheDate'
             WHERE BookingID='$BookingID'";
         if(mysqli_query($conn, $sql)){
-            header("Location:schedule.php");
+            header("Location:schedule.php?DateID=2019-11-20");
         } else{
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
         }
 }
-// foreach($query2 as $value)
-// {
-//    echo $value['BookingID'];
-//    echo $value['Rego'];
-// }
-// var_dump($query2);
- 
-//  $query = $conn->query("SELECT BookingID FROM Booking");
-//  $BookingID = $_REQUEST['BookingID'];    
-
 
 ?>

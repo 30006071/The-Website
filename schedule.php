@@ -6,7 +6,7 @@ include("inserttoschedule.php");
 
      
 
-    // If session variable is not set it will redirect to login page
+// redirect if session not to login
 
     if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 
@@ -80,13 +80,14 @@ include("inserttoschedule.php");
                     <input type=button class="button button1" onClick="parent.location='customer.php'" value="New Customer">
                     <input type=button class="button button2" onClick="parent.location='booking.php'" value="New Booking">
                     <input type=button class="button button3" onClick="parent.location='prevwork.php'" value="Previous Work">
+                    <input type=button class="button button4" onClick="parent.location='mechanic.php'" value="New Mechanic">
                 </div>
             </div>
                     <input type=button class="button buttonlogout" onClick="parent.location='logout.php'" value="Logout">
         
 </body>
 <script>
-
+//function to set header value
         function changedate(event) {
             event.preventDefault()
             window.location.href = '/schedule.php?DateID='+event.target.value;
