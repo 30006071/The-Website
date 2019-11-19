@@ -172,6 +172,23 @@ input[type=submit] {
   
 }
 
+.mydatepicker{
+  color: #ffffff;;
+  background-color: rgb(0, 0, 0);
+  padding: 3px 5px;
+  position: relative;
+      width: auto;
+      height: auto;
+      font-size: 30px;
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      left: 39.5%; 
+      margin-top: 2%;
+
+}
+
 
 
 .clearfix {
@@ -186,8 +203,8 @@ input[type=submit] {
     text-align: center;
     font-family: 'Lato';
     color: white;
-    left: 3%;
-    margin-top: 5%;
+    margin-left: 3%;
+    margin-top: 3%;
     position: relative;
     
   }
@@ -265,8 +282,8 @@ input[type=submit] {
     position: absolute;
   width: 384px;
   height: 183px;
-  left: 65%;
-  top: 260px;
+  margin-left: 65%;
+  top: 290px;
   }
   
   .button1:hover {
@@ -286,8 +303,8 @@ input[type=submit] {
     position: absolute;
     width: 384px;
     height: 183px;
-    left: 65%;
-    top: 510px;
+    margin-left: 65%;
+    top: 540px;
   
   }
   .schedulesearch {
@@ -306,8 +323,8 @@ input[type=submit] {
     position: absolute;
     width: 384px;
     height: 183px;
-    left: 65%;
-    top: 760px;
+    margin-left: 65%;
+    top: 790px;
   
   }
   .datebutton{
@@ -315,23 +332,17 @@ input[type=submit] {
     width: 543px;
     height: 100px;
     color: white;
-    margin-left: auto;
-    margin-right: auto;
+  
     font-size: 80px;
     text-align:center;
-    display:flex;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     align-items: center;
     justify-content: center;
     margin-top: 30px;
   }
-  .buttondate{
-    background-color: #000000;
-    color: white;
-  }
-  .buttondate:hover{
-    background-color: white;
-    color: black;
-  }
+
   .button3:hover {
     background-color: white;
     color: black;
@@ -344,7 +355,7 @@ input[type=submit] {
     width: 140px;
     height: 68px;
     left: 73%;
-    top: 960px;
+    top: 1000px;
     font-size: 36;
     margin-bottom: 1%;
   }
@@ -404,32 +415,70 @@ label
   margin: auto;
 }
 
-  @media only screen and (max-width: 840px) {
+  @media only screen and (max-width: 1400px) {
     .button1 {
       top:0;
       position: relative;
-      left:auto;
       width: auto;
       height: auto;
       font-size: 30px;
-      margin-left: 3%;
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      right: 4%;
     }
     .button2 {
       top:0;
       position: relative;
-      left:auto;
       width: auto;
       height: auto;
       font-size: 30px;
-      margin-left: 3%;
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
     }
     .button3 {
       top:0;
       position: relative;
-      left:auto;
       width: auto;
       height: auto;
       font-size: 30px;
-      margin-left: 3%;
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      left: 4%;
+    }
+
+    .centrebuttons{
+      text-align: center;
+      margin-top: 5%;
+    }
+    .schedulebox{
+      display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    .scheduletitle{
+      font-size: 30px;
+      width: 200px;
+      height: auto;
+    }
+
+    .datebutton{
+      
+      font-size: 30px;
+      text-align:center;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      height: auto;
+      width: 200px;
+    }
+    body{
+      overflow: hidden;
     }
   }

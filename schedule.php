@@ -2,7 +2,6 @@
 include("inserttoschedule.php");
 
     // Initialize the session
-
     session_start();
 
      
@@ -21,8 +20,8 @@ include("inserttoschedule.php");
     {
         $showbuttons = true;
     }
-
-    $currentDate = date('d-m-Y');
+    $Date = $_GET['DateID'];
+    $currentdate = date( 'd-m-Y', strtotime( $Date ) );
 ?>
 <html>
 <head>
@@ -48,42 +47,50 @@ include("inserttoschedule.php");
     <div class = "scheduletitle">
     Schedule
     </div>
-    <input class = "datebutton buttondate" type=button onClick="parent.location='prevwork.php'" value="<?php echo $currentDate; ?>">
-    
-        <!-- <form class="schedulesearch" action="searchscedule.php" method="post">  
-            <input type="text" name="valueToSearch" placeholder=""><br><br>
-            <input type="submit" name="search" value="Search" class="Centrestuff"><br><br>
-        </form> -->
+    <div class = "datebutton">
+    <?php echo $currentdate; ?>
+        </div>
+
+        <input type="date" id="Date" onChange="changedate(event)" placeholder="select date" class="mydatepicker" name="Date">
+
         <div <?php if ($showbuttons===false){?>style="margin-left: 20%;"<?php } ?>>
-        <div class = "schedulebox">
-            <table class="mystable" onClick="parent.location='thejob.php'" value="Job" >
-                    <th>ID</th>
-                    <th>Time</th>
-                    <th>CustomerID</th>
-                    <th>Rego</th>
-                    <th>Description</th>
-                    <th>Mechanic</th>
-                    <?php while($row = mysqli_fetch_array($query)):?> 
-                <tr>
-                    <td><?php echo $row['BookingID'];?></td>
-                    <td><?php echo $row['TheTime'];?></td>
-                    <td><?php echo $row['CustomerID'];?></td>
-                    <td><?php echo $row['Rego'];?></td>
-                    <td><?php echo $row['Description'];?></td>
-                    <td><?php echo $row['Mechanic'];?></td>
-                </tr>
-                <?php endwhile;?>
-            </table>
+            <div class = "schedulebox">
+                <table class="mystable" onClick="parent.location='thejob.php'" value="Job" >
+                        <th>ID</th>
+                        <th>Time</th>
+                        <th>CustomerID</th>
+                        <th>Rego</th>
+                        <th>Description</th>
+                        <th>Mechanic</th>
+                        <?php while($row = mysqli_fetch_array($query)): ?> 
+                    <tr>
+                        <td><?php echo $row['BookingID'];?></td>
+                        <td><?php echo $row['TheTime'];?></td>
+                        <td><?php echo $row['CustomerID'];?></td>
+                        <td><?php echo $row['Rego'];?></td>
+                        <td><?php echo $row['Description'];?></td>
+                        <td><?php echo $row['Mechanic'];?></td>
+                    </tr>
+                    <?php endwhile;?>
+                </table>
+            </div>
         </div>
-        </div>
-        <div <?php if ($showbuttons===false){?>style="display:none"<?php } ?>>
-            <input type=button class="button button1" onClick="parent.location='customer.php'" value="New Customer">
-            <input type=button class="button button2" onClick="parent.location='booking.php'" value="New Booking">
-            <input type=button class="button button3" onClick="parent.location='prevwork.php'" value="Previous Work">
-            
-        </div>
-                <input type=button class="button buttonlogout" onClick="parent.location='logout.php'" value="Logout">
+            <div <?php if ($showbuttons===false){?>style="display:none"<?php } ?>>
+                <div class="centrebuttons">
+                    <input type=button class="button button1" onClick="parent.location='customer.php'" value="New Customer">
+                    <input type=button class="button button2" onClick="parent.location='booking.php'" value="New Booking">
+                    <input type=button class="button button3" onClick="parent.location='prevwork.php'" value="Previous Work">
+                </div>
+            </div>
+                    <input type=button class="button buttonlogout" onClick="parent.location='logout.php'" value="Logout">
         
 </body>
+<script>
 
+        function changedate(event) {
+            event.preventDefault()
+            window.location.href = '/schedule.php?DateID='+event.target.value;
+        }
+
+        </script>
 </html>

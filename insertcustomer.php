@@ -17,7 +17,6 @@ $Email = mysqli_real_escape_string($conn, $_REQUEST['Email']);
 // Attempt insert query execution
 $sql = "INSERT INTO Customer (CustomerID, Phnum, Email) VALUES ('$CustomerID', '$Phnum', '$Email')";
 if(mysqli_query($conn, $sql)){
-    echo "Records added successfully.";
     header("Location:schedule.php");
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
